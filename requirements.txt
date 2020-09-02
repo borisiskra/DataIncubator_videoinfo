@@ -1,7 +1,7 @@
 gunicorn==19.9.0
 pandas
 matplotlib
-numpy==1.14.2
+numpy==1.16.4
 simplejson
 flask
 bokeh==2.1.1
