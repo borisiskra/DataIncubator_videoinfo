@@ -5,11 +5,8 @@ numpy==1.14.2
 simplejson
 flask
 bokeh==2.1.1
-re
 glob
 pickle
 scipy
 sentence_transformers
 spacy
-
-
