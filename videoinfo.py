@@ -12,11 +12,14 @@ def get_text(transcript):
         return transcript
 
     listoftext = []
+    EXCLUDE = ['[Music]', '[Applause]', '[MUSIC PLAYING]', '[Laughter]']
     for x in transcript:
-        if x['text'] in ['[Music]', '[Applause]', '[MUSIC PLAYING]']:
+        if x['text'] in EXCLUDE:
             continue
         listoftext.append(x['text'])
 
+    if listoftext == []:
+        return 'Transcript Unavailable'
     # countMusic = len([x['text'] for x in transcript if x['text']  == '[Music]'])
     mytext = ".\n".join(listoftext)
     # return mytext.lower(), countMusic
