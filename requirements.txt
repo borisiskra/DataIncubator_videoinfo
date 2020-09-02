@@ -1,7 +1,7 @@
 gunicorn==19.9.0
 pandas
 matplotlib
-torch==1.6.0+cpu
+torch-cpu==1.6.0
 numpy==1.16.4
 simplejson
 flask
