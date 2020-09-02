@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InfoRank</title>
+    {% block style %}
+    {% endblock %}
+
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.1.1.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.1.1.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.1.1.min.js"
+        crossorigin="anonymous"></script>
+
+
+
+{% block head %}
+{% endblock %}
+
+
+
+
+  </head>
+  <body>
+
+
+
+  <div class="sidenav">
+    <a href="/about">About</a>
+    <a href="/">Search</a>
+  </div>
+
+
+<div class="topsearch">
+  <h1>InfoRank</h1>
+  <div class="searchbar">
+    <form action="/" method="POST">
+      {% block youtubelogo %}
+      {% endblock %}
+
+      search:
+      <input name="search" />
+      <input type="submit" value="GO" />
+
+    </form>
+  </div>
+</div>
+
+
+
+  
+  <div class="main">
+    {% block content%}
+    {% endblock%}
+  </div>
+</body>
+</html>

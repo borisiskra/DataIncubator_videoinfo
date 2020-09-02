@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InfoRank</title>
+    {% block style %}
+    {% endblock %}
+
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-1.4.0.min.js"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-1.4.0.min.js"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-1.4.0.min.js"></script>
+
+  </head>
+  <body>
+
+
+
+  <div class="sidenav">
+    <a href="/about">About</a>
+    <a href="/">Search</a>
+  </div>
+
+
+<div class="topsearch">
+  <h1>About InfoRank</h1>
+</div>
+  <div class="main">
+    {% block content%}
+    {% endblock%}
+  </div>
+</body>
+</html>
