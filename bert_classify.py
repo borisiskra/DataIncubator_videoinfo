@@ -2,7 +2,10 @@ import pickle
 from collections import Counter
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
-nlp = spacy.load("en", disable=['parser', 'ner', 'textcat'])
+#nlp = spacy.load("en", disable=['parser', 'ner', 'textcat'])
+
+import en_core_web_sm
+nlp = en_core_web_sm.load()
 # local imports
 from videoinfo import get_transcript
 from bert_init import bert_classify_sentences
@@ -26,10 +29,10 @@ def bert_video_classifier(videoID):
         common_words = most_common_words(transcript)
 
         sentence_lst = transcript.split('\n')
-        # print(sentence_lst)
+        print(f'number sentences: {len(sentence_lst)}')
 
     except Exception as err:
-        print('==>>', err)
+        print('====>>', err)
 
     all_topic_predictions = bert_classify_sentences(sentence_lst)
 
@@ -54,7 +57,7 @@ more_stop_words = set(['know', 'include', 'form', 'small', 'large', 'might',
                        'include', 'know', 'form', 'every', 'enough', 'fully',
                        'show', 'either', 'likelike', 'could', 'would', 'like',
                        'come', 'within', 'oh', 'okay', 'sure', 'fun', 'sure',
-                       ''])
+                       'that', 'all', 'let', 'nope', 'yup'])
 
 my_stop_words = STOP_WORDS.union(more_stop_words)
 
